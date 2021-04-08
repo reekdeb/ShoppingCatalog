@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "productName": "Sunglass 01",
+      "category": "Sunglass",
+      "subCategory": "Male"
+    },
+    {
+      "productName": "Sunglass 02",
+      "category": "Sunglass",
+      "subCategory": "Female"
+    },
+    {
+      "productName": "Watch 01",
+      "category": "Watch",
+      "subCategory": "Male"
+    },
+    {
+      "productName": "Watch 02",
+      "category": "Watch",
+      "subCategory": "Male"
+    }
+  ]
+}

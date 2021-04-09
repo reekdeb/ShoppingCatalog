@@ -37,11 +37,13 @@ SpriteAtlas:
   m_PackedSprites:
   - {fileID: 21300000, guid: ab71a5d173fd9b447b8d7e31835062bd, type: 3}
   - {fileID: 21300000, guid: 45a30ee1670fd824ca4c9eb762301538, type: 3}
+  - {fileID: 21300000, guid: ec010797e424edb4980084114c7d1915, type: 3}
   - {fileID: 21300000, guid: fecc2ab8aa052974eadfec4795027c5f, type: 3}
   - {fileID: 21300000, guid: 02ede56f8cb2e65468853a04ee02d596, type: 3}
   m_PackedSpriteNamesToIndex:
   - baseline_more_vert_white_48
   - RoundedSquare
+  - outline_insert_photo_white_48
   - DropShadow
   - baseline_expand_more_white_48
   m_Tag: SpriteAtlas

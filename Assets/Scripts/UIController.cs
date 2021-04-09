@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
     [SerializeField]
     private ProductManager productManager;
     [SerializeField]
-    private RectTransform panelFilters;
+    private Animator panelFilters;
     [SerializeField]
     private RectTransform productContainter;
     [SerializeField]
@@ -21,9 +21,11 @@ public class UIController : MonoBehaviour
     private Dictionary<string, CategoryUI> categoryUIs = new Dictionary<string, CategoryUI>();
     private Dictionary<Product, ProductButtonUI> productButtons = new Dictionary<Product, ProductButtonUI>();
 
+    private int animParamBoolSwitch = Animator.StringToHash("Switch");
+
     private void Start()
     {
-        panelFilters.gameObject.SetActive(false);
+        //panelFilters.gameObject.SetActive(false);
         CreateUI();
     }
 
@@ -52,6 +54,8 @@ public class UIController : MonoBehaviour
             categoryUI.SetSubCategories(subCategories);
         });
     }
+
+    public void ClickTogglePanelFilters() => panelFilters.SetBool(animParamBoolSwitch, !panelFilters.GetBool(animParamBoolSwitch));
 
     public void ClickFiltersApply()
     {

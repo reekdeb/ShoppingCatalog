@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class SubCategoryUI : MonoBehaviour
 {
@@ -9,4 +10,7 @@ public class SubCategoryUI : MonoBehaviour
     private TextMeshProUGUI subCategoryLabel;
     public string SubCategoryLabel { get => subCategoryLabel.text; set => subCategoryLabel.text = value; }
 
+    [SerializeField]
+    private Toggle subCategoryToggle;
+    public Toggle SubCategoryToggle => subCategoryToggle;
 }

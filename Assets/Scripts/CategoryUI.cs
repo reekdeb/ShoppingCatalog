@@ -7,17 +7,18 @@ public class CategoryUI : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI categoryLabel;
+    public string CategoryLabel { get => categoryLabel.text; set => categoryLabel.text = value; }
+
     [SerializeField]
     private Button buttonToggleCategory;
     [SerializeField]
     private SubCategoryUI subCategoryPrefab;
 
-    public string CategoryLabel { get => categoryLabel.text; set => categoryLabel.text = value; }
+    public Dictionary<string, SubCategoryUI> SubCategoryUIs { get; } = new Dictionary<string, SubCategoryUI>();
+    private bool doneSubCategories = false;
 
     private Animator[] animators;
     private int animatorBoolSwitch = Animator.StringToHash("Switch");
-
-    private bool doneSubCategories = false;
 
     public void SetSubCategories(string[] subCategories)
     {
@@ -28,6 +29,7 @@ public class CategoryUI : MonoBehaviour
             {
                 var scUI = Instantiate(subCategoryPrefab, transform);
                 scUI.SubCategoryLabel = sc;
+                SubCategoryUIs.Add(sc, scUI);
             }
 
             List<Animator> allAnimators = new List<Animator>();

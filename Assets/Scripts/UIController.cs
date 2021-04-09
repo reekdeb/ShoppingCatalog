@@ -83,5 +83,7 @@ public class UIController : MonoBehaviour
             .Select(scui => scui.SubCategoryToggle)
             .ToList()
             .ForEach(t => t.isOn = false);
+
+        ClickFiltersApply();
     }
 }

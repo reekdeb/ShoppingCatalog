@@ -1990,7 +1990,7 @@ MonoBehaviour:
   productManager: {fileID: 2130670209}
   panelFilters: {fileID: 515327231}
   productContainter: {fileID: 799931563}
-  productButtonPrefab: {fileID: -3817278393730365064, guid: d603e02dee2d00843ac75c427dfb1ef9,
+  productButtonPrefab: {fileID: 1183383189850292, guid: 3afd94f530b33ef469cce3f67e458ae8,
     type: 3}
   categoryContainer: {fileID: 1733585911}
   categoryUIPrefab: {fileID: 6519293995662162271, guid: 4da252f7e4bafa147b5c8be207f3be0d,

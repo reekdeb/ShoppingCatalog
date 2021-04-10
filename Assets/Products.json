@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "productName": "Makeup 01",
+      "category": "Makeup",
+      "subCategory": "Female",
+      "prefab": "AR FemaleMakeup01"
+    },
+    {
+      "productName": "EyeShadow 01",
+      "category": "Makeup",
+      "subCategory": "Female",
+      "prefab": "AR FemaleMakeup02"
+    },
+    {
+      "productName": "Tilak",
+      "category": "Makeup",
+      "subCategory": "Male",
+      "prefab": "AR MaleMakeup01"
+    },
+    {
+      "productName": "Moustache",
+      "category": "Beard",
+      "subCategory": "Male",
+      "prefab": "AR MaleBeard01"
+    },
+    {
+      "productName": "French Beard",
+      "category": "Beard",
+      "subCategory": "Male",
+      "prefab": "AR MaleBeard02"
+    }
+  ]
+}

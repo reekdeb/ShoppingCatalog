@@ -1,12 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.Management;
 
 public class UIController : MonoBehaviour
 {
     [SerializeField]
+    private ARSession aRSession;
+    [SerializeField]
+    private ARCameraBackground aRCameraBackground;
+    [SerializeField]
+    private ARFaceManager aRFaceManager;
+    [SerializeField]
     private ProductManager productManager;
+    [SerializeField]
+    private Animator panelShoppingCatalog;
     [SerializeField]
     private Animator panelFilters;
     [SerializeField]
@@ -25,8 +34,8 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        //panelFilters.gameObject.SetActive(false);
         CreateUI();
+        ClickShowPanelShoppingCatalog(true);
     }
 
     private void CreateUI()
@@ -37,8 +46,13 @@ public class UIController : MonoBehaviour
             pbUI.ProductName = p.productName;
             pbUI.CategoryLabel = p.category;
             pbUI.SubCategoryLabel = p.subCategory;
-
             productButtons.Add(p, pbUI);
+
+            pbUI.Button.onClick.AddListener(() =>
+            {
+                aRFaceManager.facePrefab = Resources.Load<GameObject>(p.prefab);
+                ClickShowPanelShoppingCatalog(false);
+            });
         }
 
         var categories = productManager.Catalog.GetCategories();
@@ -55,12 +69,26 @@ public class UIController : MonoBehaviour
         });
     }
 
+    //private bool isXRInitialized;
+    public void ClickShowPanelShoppingCatalog(bool value)
+    {
+        panelShoppingCatalog.SetBool(animParamBoolSwitch, value);
+        //if (val) aRSession.matchFrameRateRequested = false;
+        //else aRSession.matchFrameRateRequested = true;
+        aRSession.enabled = !value;
+        aRCameraBackground.enabled = !value;
+        aRFaceManager.enabled = !value;
+        if (value) XRGeneralSettings.Instance.Manager.StopSubsystems();
+        else XRGeneralSettings.Instance.Manager.StartSubsystems();
+        if (value) Application.targetFrameRate = -1;
+    }
+
     public void ClickTogglePanelFilters() => panelFilters.SetBool(animParamBoolSwitch, !panelFilters.GetBool(animParamBoolSwitch));
 
     public void ClickFiltersApply()
     {
         // All unchecked - Show all
-        if(categoryUIs.Values.All(cui => !cui.SubCategoryUIs.Any(scui => scui.Value.SubCategoryToggle.isOn)))
+        if (categoryUIs.Values.All(cui => !cui.SubCategoryUIs.Any(scui => scui.Value.SubCategoryToggle.isOn)))
         {
             productButtons.Values.ToList().ForEach(pb => pb.gameObject.SetActive(true));
             return;

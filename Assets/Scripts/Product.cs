@@ -14,6 +14,7 @@ public class Product
     public string productName;
     public string category;
     public string subCategory;
+    public string prefab;
 }
 
 public class ProductRuntime

@@ -1,24 +1,34 @@
 {
   "products": [
     {
-      "productName": "Sunglass 01",
-      "category": "Sunglass",
-      "subCategory": "Male"
+      "productName": "Makeup 01",
+      "category": "Makeup",
+      "subCategory": "Female",
+      "prefab": "AR FemaleMakeup01"
     },
     {
-      "productName": "Sunglass 02",
-      "category": "Sunglass",
-      "subCategory": "Female"
+      "productName": "EyeShadow 01",
+      "category": "Makeup",
+      "subCategory": "Female",
+      "prefab": "AR FemaleMakeup02"
     },
     {
-      "productName": "Watch 01",
-      "category": "Watch",
-      "subCategory": "Male"
+      "productName": "Tilak",
+      "category": "Makeup",
+      "subCategory": "Male",
+      "prefab": "AR MaleMakeup01"
     },
     {
-      "productName": "Watch 02",
-      "category": "Watch",
-      "subCategory": "Male"
+      "productName": "Moustache",
+      "category": "Beard",
+      "subCategory": "Male",
+      "prefab": "AR MaleBeard01"
+    },
+    {
+      "productName": "French Beard",
+      "category": "Beard",
+      "subCategory": "Male",
+      "prefab": "AR MaleBeard02"
     }
   ]
 }

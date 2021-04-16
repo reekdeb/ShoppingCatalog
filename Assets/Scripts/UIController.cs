@@ -78,8 +78,10 @@ public class UIController : MonoBehaviour
         aRSession.enabled = !value;
         aRCameraBackground.enabled = !value;
         aRFaceManager.enabled = !value;
+#if !UNITY_EDITOR
         if (value) XRGeneralSettings.Instance.Manager.StopSubsystems();
         else XRGeneralSettings.Instance.Manager.StartSubsystems();
+#endif
         if (value) Application.targetFrameRate = -1;
     }
 
